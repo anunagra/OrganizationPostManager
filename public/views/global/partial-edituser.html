@@ -1,0 +1,47 @@
+  
+<modal title="EditUser" visible="showRegisterModal" >
+  <div class="modal-header"> 
+    <button type="button" class="close" ng-click="clearForm()" aria-hidden="true">&times;</button>
+    <h4 class="modal-title">Edit</h4>
+  </div>
+    {{user}}
+  <div class="modal-body">
+      <form ng-submit="submitForm()" name="RegisterUser" autocomplete="off">
+        <div class="form-group">
+            <label class="control-label" for="exampleInputEmail1">Name</label>
+            <div class="row">
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" id="firstname" name="user.firstname" ng-model="user.firstname" placeholder="firstname" value="{{user.firstName}}">
+                </div>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" id="lastname" name="user.lastname" ng-model="user.lastname"  placeholder="lastname"  value="{{user.lastName}}">
+                </div>
+            </div>
+        </div>
+        <div class="form-group" ng-class="error.code == 11000 ? 'has-error' : '' ">
+            <label class="control-label"  for="exampleInputEmail1">Username</label>
+            <input  type="email" class="form-control"  id="email" name="user.email" ng-model="user.email" placeholder="Email"  value="{{user.userName}}">
+            <span class="help-block" ng-if="error.code == 11000">Username already exists.Please choose another one.</span>
+          </div>
+         <div class="form-group">
+            <label class="control-label"  for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" id="password" name="user.password"  ng-model="user.password" placeholder="Password"  value="{{user.password}}">
+          </div>                            
+          <div class="form-group">                
+            <label class="radio-inline">
+              <input type="radio" name="user.role" id="inlineRadio1" ng-model="user.role" ng-value="1"> Admin
+            </label>
+            <label class="radio-inline">
+              <input type="radio" name="user.role" id="inlineRadio2" ng-model="user.role" ng-value="2"> Instructor
+            </label>
+            <label class="radio-inline">
+              <input type="radio" name="user.role" id="inlineRadio2" ng-model="user.role" ng-value="3" ng-checked="true" > Student
+            </label>
+          </div>      
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" ng-click="clearForm()">Close</button>
+            <button type="submit" class="btn btn-primary"> Save </button>
+          </div>                                               
+        </form>
+  </div> 
+</modal>

@@ -1,0 +1,6 @@
+<div class="users-container">
+    <div ng-repeat="user in data.success.usersObj">
+        <p class="inst-info" ng-if="user.type == '2'">{{user.firstName}} &nbsp; {{user.lastName}} <span class="pull-right"><a ng-click="editUser(user.userName);"><i class="fa fa-edit"><!-- --></i></a> &nbsp; <a ng-click="deleteUser(user.userName)"><i class="fa fa-times"><!-- --></i></a></span></p>
+        <p class="stud-info" ng-if="user.type == '3'">{{user.firstName}} &nbsp; {{user.lastName}} <span class="pull-right"><a ng-click="editUser(user.userName);"><i class="fa fa-edit"><!-- --></i></a> &nbsp; <a ng-click="deleteUser(user.userName)"><i class="fa fa-times"><!-- --></i></a></span></p>
+    </div>    
+</div>

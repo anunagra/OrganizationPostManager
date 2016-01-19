@@ -1,0 +1,17 @@
+ <div>  
+    <h3>Welcome Class Board !!! 
+       <span class="pull-right" ng-if="userLoggedIn == 'false'">
+            <button ng-click="toggleModal()" class="btn btn-default" ui-sref="register">Register</button>
+            <button ng-click="toggleSignInModal()" class="btn btn-default" ui-sref="signin">Sign In </button>            
+        </span>
+        <span class="pull-right" ng-if="userLoggedIn == 'true'">
+           <span class="login-user"> Welcome {{username}} </span>
+            <button ng-click="signOut()"  class="btn btn-default">Sign Out </button>
+        </span>
+    </h3>     
+    <ul class="nav nav-tabs nav-justified"  ng-if="userLoggedIn == 'true'">
+         <li class="active" ><a data-toggle="tab" ui-sref="organize" >Organize</a></li>
+         <li><a data-toggle="tab" ui-sref="newsfeed">Annoucements</a></li>
+         <li><a data-toggle="tab" ui-sref="events">Events</a></li>
+    </ul>
+</div>

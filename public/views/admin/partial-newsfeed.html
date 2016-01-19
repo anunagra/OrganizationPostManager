@@ -1,0 +1,25 @@
+
+<div class="tab-content">
+  <div id="newsfeed" class="tab-pane fade in active newsfeed">
+    <h3>Comment</h3>
+      <form class="comment-form clearfix" ng-submit="sendMessage()">
+        <input type="hidden" ng-model="username" name="username" value="{{username}}"></input>
+        <input type="hidden" ng-model="type" name="type" value="{{type}}"></input>
+        <textarea class="form-control" name="comment.description" rows="3" ng-model="message" required></textarea>
+        <button class="btn btn-default pull-right" type="submit">POST</button>        
+      </form>
+    
+      <div class="well comment-board">          
+          <div ng-repeat="message in messages | orderBy: '-created_at'" class="alert clearfix" ng-class="{'alert-success' : message.ownerType == '1' ,'alert-warning' : message.ownerType == '2' , 'alert-info' : message.ownerType == '3' }">
+              <p>
+                {{message.description}}
+                  <a class="pull-right" ng-click="deletePost(message._id);" >
+                      <i class="fa fa-times"><!-- --></i>
+                  </a>
+              </p>
+             <span class="message-info pull-right" ng-bind="message.created_at | date:'MM/dd/yyyy HH:mm:ss'"></span>
+             <span class="message-info pull-right"><i>By {{message.ownerId}}</i>  &nbsp; &nbsp;</span>
+          </div>
+      </div>
+  </div>
+</div>

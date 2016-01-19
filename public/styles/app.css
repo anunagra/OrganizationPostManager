@@ -1,0 +1,87 @@
+.header, .footer {
+    background-color: #00bebe;
+}
+.footer {
+    height: 50px;
+}
+.header h3{
+    padding: 20px;
+    color: white;
+    margin: 0;
+}
+.login-user{
+    font-size: 14px;
+}
+.message-info{
+    font-size: 12px;
+}
+.content{
+    background-color: #ece8e0 ; 
+    height:768px;
+    padding: 20px;
+}
+.comment-form{
+    padding: 20px;
+}
+.comment-form .pull-right{
+    margin: 20px 0;
+}
+.comment-board{
+    height: 63%;
+    overflow-y: auto;
+}
+.memebers-drop-pane{
+    min-height: 200px;
+    background-color: #ece8e0;
+    border-radius: 10px;
+    padding : 10px;
+}
+.nav-tabs.nav-justified .active{
+    background-color: #ece8e0;
+}
+.nav-tabs > li.active > a{
+     background-color: #ece8e0;
+}
+.user-placeholder{
+    font-weight: bold;
+    border: 2px solid;
+    width: 210px;
+}
+.btn-primary {
+    background-color: #00bebe;
+    border-color: #00bebe;
+}
+.group-info{
+    border:2px solid;
+}
+.stud-info {
+    border:2px solid #00bebe;
+    border-radius: 4px;
+    padding: 8px;
+    width:150px;
+}
+.inst-info {
+    border:2px solid #00be00;
+    border-radius: 4px;
+    padding: 8px;                
+    width:150px;
+}
+.organize .col-sm-6 .btn-primary{
+   /* margin: 0 0 20px 0;*/
+}
+.newsfeed{
+    background-color: floralwhite;
+    height: 100%;
+    padding: 10px;
+}
+
+.nav-tab {
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    margin: 0;
+    padding: 10px;
+}
+.nav-tab.active{
+    border-top:5px solid #ece8e0;
+}

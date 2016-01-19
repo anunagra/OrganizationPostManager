@@ -1,0 +1,80 @@
+
+        <div class="tab-content">
+          <div id="organize" class="tab-pane fade in organize active">     
+              <div class="row">
+                <div class="col-sm-3">
+                    <div class="well">
+                         <h4 class="clearfix">
+                             USERS
+                             <button class="btn btn-primary pull-right" ng-click="toggleModal()" ui-sref="register">Add User</button>
+                          </h4>
+                           <div ng-repeat="user in users"
+                            data-drag="true" data-jqyoui-options="{revert: 'invalid', helper: 'clone'}" 
+                            jqyoui-draggable="{index: {{$index}} ,placeholder :'keep'}" ng-model="users">
+                            <p class="alert user-placeholder" ng-class="{'alert-info': user.type == '2' , 'alert-warning' : user.type == '3' }">
+                              <span>{{user.firstName}} &nbsp; {{user.lastName}}</span>
+                                 <span class="pull-right">
+                                     <a ng-click="editUser(user.userName);">
+                                         <i class="fa fa-edit"><!-- --></i>
+                                     </a> &nbsp;
+                                     <a ng-click="deleteUser(user.userName)">
+                                         <i class="fa fa-times"><!-- --></i>
+                                     </a>
+                                 </span>
+                             </p>                
+                         </div>            
+                    </div>
+                  </div>             
+                  <div class="col-sm-6">
+                       <div class="well">
+                          <h4 class="clearfix">
+                              GROUPS
+                             <button class="btn btn-primary pull-right" ng-click="toggleCreateGroupPane()">Add group</button>
+                           </h4>
+                          <p class="alert alert-success  group-info" ng-repeat="group in groups">
+                            {{group.groupName}}
+                              <span class="pull-right">
+                                 <a ng-click="deleteGroup(group.groupName);">
+                                     <i class="fa fa-times"><!-- --></i>
+                                 </a> 
+                             </span>
+                          </p>
+                                                  
+                          <div class="well" ng-if="createGroupPane">  
+                              <form ng-submit="addGroup()">
+                                <button  class="btn btn-primary" type="submit">Save</button>
+                                  <div class="form-group">
+                                    <label class="control-label">Group Name</label>
+                                    <input type="text" class="form-control" ng-model="group.name" name="group.name" value="" required></input>
+                                  </div>
+                                  <div class="form-group">
+                                      <label class="control-label">  Members </label>
+                                      <div class="memebers-drop-pane"
+                                           data-drop="true" jqyoui-droppable 
+                                           ng-model="groupMembers">
+                                          <div ng-repeat="user in groupMembers track by $index" 
+                                               ng-show="user.userName" data-drag="true" 
+                                                  data-jqyoui-options="{revert: 'invalid', helper: 'clone'}" 
+                                                  ng-model="groupMembers" jqyoui-draggable="{index: {{$index}} , animate:true}" >
+                                               <p class="alert user-placeholder" 
+                                                  ng-class="{'alert-info': user.type == '2' , 'alert-warning' : user.type == '3' }">
+                                                   <span>{{user.firstName}} &nbsp; {{user.lastName}}</span>   
+                                                   <span class="pull-right">
+                                                         <a ng-click="removeUser($index);">
+                                                             <i class="fa fa-times"><!-- --></i>
+                                                         </a> 
+                                                     </span>
+                                                 </p>
+                                          </div>
+                                      </div>
+                                  </div>  
+                                <button  class="btn btn-primary" type="submit">Save</button>
+                              </form>
+                          </div>
+                      </div>                  
+                  </div>
+              </div>
+
+
+          </div>
+        </div>
