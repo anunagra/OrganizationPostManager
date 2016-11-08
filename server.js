@@ -61,4 +61,4 @@ server.listen(8080);
 console.log('Listening On port : ' + port);
 
 // expose app           
-exports = module.exports = app;   
+exports = module.exports = app;   //testing on docker
