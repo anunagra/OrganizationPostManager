@@ -3,8 +3,8 @@ var express        = require('express');
 var app            = express();
 var bodyParser     = require('body-parser');
 var methodOverride = require('method-override');
-var mongoose = require('mongoose');
-var config = require('./config');
+//var mongoose = require('mongoose');
+//var config = require('./config');
 
 var http = require('http');
 // configuration ===========================================
@@ -48,12 +48,12 @@ require('./app/routes')(app , appEnv); // configure our routes
 //app.listen(port);               
 
 
-var socket = require("./app/routes/comment_sockets");
+//var socket = require("./app/routes/comment_sockets");
 
 var server = http.createServer(app);
 var io = require('socket.io').listen(server);  //pass a http.Server instance
 
-io.sockets.on('connection', socket);
+//io.sockets.on('connection', socket);
 
 server.listen(8080);
 
