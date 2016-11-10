@@ -10,7 +10,7 @@ var http = require('http');
 // configuration ===========================================
     
 // config files
-var db = require('./config/db');
+//var db = require('./config/db');
 
 var appEnv = {
 	config: config
