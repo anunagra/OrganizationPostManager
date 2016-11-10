@@ -55,7 +55,10 @@ var io = require('socket.io').listen(server);  //pass a http.Server instance
 
 io.sockets.on('connection', socket);
 
-server.listen(8080);
+//server.listen(8080);
+server.listen(process.env.PORT || 8080, function(){
+  console.log('listening on port ' +port);
+});
 
 // shoutout to the user                     
 console.log('Listening On port : ' + port);
